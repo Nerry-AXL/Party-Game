@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Playful, vibrant palette */
+  --background: 260 100% 97%;
+  --foreground: 260 20% 20%;
+  
+  --primary: 265 89% 66%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 35 100% 65%; /* Orange pop */
+  --secondary-foreground: 35 90% 20%;
+  
+  --muted: 260 20% 90%;
+  --muted-foreground: 260 10% 40%;
+  
+  --accent: 180 80% 45%; /* Teal accent */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 260 20% 85%;
+  --input: 260 20% 90%;
+  --ring: 265 89% 66%;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 260 40% 10%;
+  --foreground: 260 10% 95%;
+  
+  --primary: 265 80% 60%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 35 90% 60%;
+  --secondary-foreground: 35 90% 10%;
+  
+  --muted: 260 20% 20%;
+  --muted-foreground: 260 10% 70%;
+  
+  --accent: 180 70% 40%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 260 20% 20%;
+  --input: 260 20% 20%;
+  --ring: 265 80% 60%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', sans-serif;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(249, 115, 22, 0.1) 0%, transparent 25%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Custom playful card style */
+.game-card {
+  @apply bg-white dark:bg-zinc-900 rounded-3xl border-2 border-border shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300;
+}
+
+.game-card:hover {
+  @apply transform -translate-y-1 shadow-[0_20px_40px_rgb(0,0,0,0.08)];
+}
+
+/* 3D button effect */
+.btn-3d {
+  @apply transition-all active:translate-y-1 active:shadow-none shadow-[0_4px_0_0_rgba(0,0,0,0.1)];
+}
